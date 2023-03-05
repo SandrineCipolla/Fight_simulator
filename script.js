@@ -111,8 +111,18 @@ class Guerrier extends Personnage {
 // monPerso2.attaquer(persoAdverse);
 // monPerso2.coupSpecial(persoAdverse);
 
-let monPerso3 = new Guerrier("Roxor");
-let persoAdverse = new Personnage("Roro", "guerrier", 100, 50);
-console.log(monPerso3);
-monPerso3.attaquer(persoAdverse);
-monPerso3.coupSpecial(persoAdverse);
+// let monPerso3 = new Guerrier("Roxor");
+// let persoAdverse = new Personnage("Roro", "guerrier", 100, 50);
+// console.log(monPerso3);
+// monPerso3.attaquer(persoAdverse);
+// monPerso3.coupSpecial(persoAdverse);
+
+let gandalf = new Magicien("Gandalf");
+let thor = new Guerrier("Thor");
+console.log(thor.informations);
+console.log(gandalf.informations);
+gandalf.attaquer(thor);
+console.log(thor.informations);
+thor.attaquer(gandalf);
+console.log(gandalf.informations);
+gandalf.coupSpecial(thor);
