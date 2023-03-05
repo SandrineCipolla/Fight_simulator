@@ -67,13 +67,52 @@ class Magicien extends Personnage {
   }
 }
 
+class Guerrier extends Personnage {
+  constructor(pseudo) {
+    super(pseudo, "guerrier", 350, 50);
+  }
+
+  attaquer(personnage) {
+    personnage.sante = personnage.sante - this.attaque;
+    console.log(
+      this.pseudo +
+        " attaque " +
+        personnage.pseudo +
+        " avec son épée " +
+        (this.attaque + " dégats") +
+        " ."
+    );
+    this.evoluer();
+    personnage.verifierSante();
+  }
+  coupSpecial(personnage) {
+    personnage.sante -= this.attaque * 5;
+    console.log(
+      this.pseudo +
+        " attaque avec son coup spécial haches de guerre " +
+        personnage.pseudo +
+        " " +
+        (this.attaque * 5 + " dégats") +
+        "."
+    );
+    this.evoluer();
+    personnage.verifierSante();
+  }
+}
+
 // let monPerso = new Personnage("toto", "magicien", 0, "coup");
 // monPerso.evoluer();
 // monPerso.verifierSante();
 // console.log(monPerso.informations);
 
-let monPerso2 = new Magicien("titi");
+// let monPerso2 = new Magicien("titi");
+// let persoAdverse = new Personnage("Roro", "guerrier", 100, 50);
+// console.log(monPerso2);
+// monPerso2.attaquer(persoAdverse);
+// monPerso2.coupSpecial(persoAdverse);
+
+let monPerso3 = new Guerrier("Roxor");
 let persoAdverse = new Personnage("Roro", "guerrier", 100, 50);
-console.log(monPerso2);
-monPerso2.attaquer(persoAdverse);
-monPerso2.coupSpecial(persoAdverse);
+console.log(monPerso3);
+monPerso3.attaquer(persoAdverse);
+monPerso3.coupSpecial(persoAdverse);
